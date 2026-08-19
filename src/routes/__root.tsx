@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
+import { BandeauCookies } from "@/components/site/Cookies";
 
 function NotFoundComponent() {
   return (
@@ -77,14 +80,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "La Poterie des Oiseaux Bleus — céramique artisanale à Strasbourg" },
+      {
+        name: "description",
+        content:
+          "Atelier-boutique de céramique à Strasbourg (Krutenau) : vaisselle et objets faits main par Lisa Débat et Doriane Larreta, façonnés et cuits sur place, 5 quai Charles Altorffer.",
+      },
+      { name: "author", content: "La Poterie des Oiseaux Bleus" },
+      { property: "og:title", content: "La Poterie des Oiseaux Bleus" },
+      {
+        property: "og:description",
+        content: "Atelier-boutique de céramique artisanale à Strasbourg, Krutenau.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "theme-color", content: "#f6efe6" },
     ],
     links: [
       {
@@ -102,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
@@ -119,8 +129,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+      <BandeauCookies />
     </QueryClientProvider>
   );
 }
