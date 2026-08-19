@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BoutiqueRouteImport } from './routes/boutique'
+import { Route as CommanderRouteImport } from './routes/commander'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as JournalRouteImport } from './routes/journal'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as NosCreatricesRouteImport } from './routes/nos-creatrices'
+import { Route as NotreHistoireRouteImport } from './routes/notre-histoire'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BoutiqueRoute = BoutiqueRouteImport.update({
+  id: '/boutique',
+  path: '/boutique',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommanderRoute = CommanderRouteImport.update({
+  id: '/commander',
+  path: '/commander',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NosCreatricesRoute = NosCreatricesRouteImport.update({
+  id: '/nos-creatrices',
+  path: '/nos-creatrices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotreHistoireRoute = NotreHistoireRouteImport.update({
+  id: '/notre-histoire',
+  path: '/notre-histoire',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/boutique': typeof BoutiqueRoute
+  '/commander': typeof CommanderRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/journal': typeof JournalRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/nos-creatrices': typeof NosCreatricesRoute
+  '/notre-histoire': typeof NotreHistoireRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/boutique': typeof BoutiqueRoute
+  '/commander': typeof CommanderRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/journal': typeof JournalRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/nos-creatrices': typeof NosCreatricesRoute
+  '/notre-histoire': typeof NotreHistoireRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/boutique': typeof BoutiqueRoute
+  '/commander': typeof CommanderRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/journal': typeof JournalRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/nos-creatrices': typeof NosCreatricesRoute
+  '/notre-histoire': typeof NotreHistoireRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/boutique'
+    | '/commander'
+    | '/confidentialite'
+    | '/contact'
+    | '/faq'
+    | '/journal'
+    | '/mentions-legales'
+    | '/nos-creatrices'
+    | '/notre-histoire'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/boutique'
+    | '/commander'
+    | '/confidentialite'
+    | '/contact'
+    | '/faq'
+    | '/journal'
+    | '/mentions-legales'
+    | '/nos-creatrices'
+    | '/notre-histoire'
+  id:
+    | '__root__'
+    | '/'
+    | '/boutique'
+    | '/commander'
+    | '/confidentialite'
+    | '/contact'
+    | '/faq'
+    | '/journal'
+    | '/mentions-legales'
+    | '/nos-creatrices'
+    | '/notre-histoire'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BoutiqueRoute: typeof BoutiqueRoute
+  CommanderRoute: typeof CommanderRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  JournalRoute: typeof JournalRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  NosCreatricesRoute: typeof NosCreatricesRoute
+  NotreHistoireRoute: typeof NotreHistoireRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/boutique': {
+      id: '/boutique'
+      path: '/boutique'
+      fullPath: '/boutique'
+      preLoaderRoute: typeof BoutiqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commander': {
+      id: '/commander'
+      path: '/commander'
+      fullPath: '/commander'
+      preLoaderRoute: typeof CommanderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nos-creatrices': {
+      id: '/nos-creatrices'
+      path: '/nos-creatrices'
+      fullPath: '/nos-creatrices'
+      preLoaderRoute: typeof NosCreatricesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notre-histoire': {
+      id: '/notre-histoire'
+      path: '/notre-histoire'
+      fullPath: '/notre-histoire'
+      preLoaderRoute: typeof NotreHistoireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BoutiqueRoute: BoutiqueRoute,
+  CommanderRoute: CommanderRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  JournalRoute: JournalRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  NosCreatricesRoute: NosCreatricesRoute,
+  NotreHistoireRoute: NotreHistoireRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
